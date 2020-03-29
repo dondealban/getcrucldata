@@ -80,3 +80,36 @@ ggplot(data = dfRD0, aes(x = lon, y = lat)) +
   coord_quickmap() +
   ggtitle("Global Monthly Relative Humidity 1961-1990") +
   facet_wrap(~ month, nrow = 4)
+
+# Create Violin Plots of Climate Elements -
+
+# Temperature
+ggplot(data = dfTMP, aes(x = month, y = tmp)) +
+  geom_violin() +
+  ylab("Temperature (˚C)") +
+  labs(title = "Global Monthly Mean Land Surface Temperatures, 1960-1991",
+       subtitle = "Excludes Antarctica")
+
+ggplot(data = dfSUN, aes(x = month, y = sun)) +
+  geom_violin() +
+  ylab("Sunshine Duration (%)") +
+  labs(title = "Global Percentage of Maximum Possible Sunshine, 1960-1991",
+       subtitle = "Excludes Antarctica")
+
+ggplot(data = dfFRS, aes(x = month, y = frs)) +
+  geom_violin() +
+  ylab("Number of Days per Month") +
+  labs(title = "Global Monthly Ground Frost Frequency, 1960-1991",
+       subtitle = "Excludes Antarctica")
+
+ggplot(data = dfWND, aes(x = month, y = wnd)) +
+  geom_violin() +
+  ylab("10m Wind Speed (m/s)") +
+  labs(title = "Global Monthly 10m Wind Speed, 1960-1991",
+       subtitle = "Excludes Antarctica")
+
+ggplot(data = dfRD0, aes(x = month, y = rd0)) +
+  geom_violin() +
+  ylab("Relative Humidity (%)") +
+  labs(title = "Global Monthly 10m Wind Speed, 1960-1991",
+       subtitle = "Excludes Antarctica")
