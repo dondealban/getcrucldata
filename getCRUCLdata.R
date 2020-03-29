@@ -44,7 +44,7 @@ dfRD0 <- get_CRU_df(rd0 = TRUE)
 # Temperature
 ggplot(data = dfTMP, aes(x = lon, y = lat)) +
   geom_raster(aes(fill = tmp)) +
-  scale_fill_viridis(option = "inferno") +
+  scale_fill_viridis(option = "magma") +
   coord_quickmap() +
   ggtitle("Global Mean Monthly Temperatures 1961-1990") +
   facet_wrap(~ month, nrow = 4)
