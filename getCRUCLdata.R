@@ -8,7 +8,11 @@
 
 
 # Set Working Directory -------------------
-
+setwd("/Users/dondealban/Dropbox/Research/getcrucldata/")
 
 # Load Libraries --------------------------
+library(getCRUCLdata)
+library(raster)
+library(ggplot2)
+
 # Read Input Data -------------------------
