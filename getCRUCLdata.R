@@ -111,5 +111,5 @@ ggplot(data = dfWND, aes(x = month, y = wnd)) +
 ggplot(data = dfRD0, aes(x = month, y = rd0)) +
   geom_violin() +
   ylab("Relative Humidity (%)") +
-  labs(title = "Global Monthly 10m Wind Speed, 1960-1991",
+  labs(title = "Global Relative Humidity, 1960-1991",
        subtitle = "Excludes Antarctica")
