@@ -16,3 +16,17 @@ library(raster)
 library(ggplot2)
 
 # Read Input Data -------------------------
+# The get_CRU_df() function automates the download process and creates tidy dataframes of
+# the CRU CL v.2.0 climatology elements.
+CRU_data <- get_CRU_df(pre = TRUE,    # precipitation (mm/month)
+                       pre_cv = TRUE, # cv of precipitation (%)
+                       rd0 = TRUE,    # wet-days (number days with >0.1 millimetres rain per month)
+                       tmp = TRUE,    # temperature (degrees Celsius)
+                       dtr = TRUE,    # mean diurnal temperature range (degrees Celsius)
+                       reh = TRUE,    # relative humidity
+                       tmn = TRUE,    # minimum temperature values (degrees Celsius)
+                       tmx = TRUE,    # maximum temperature values (degrees Celsius)
+                       sunp = TRUE,   # percent of maximum possible sunshine (% of day length)
+                       frs = TRUE,    # ground-frost records (number of days with ground-frost per month)
+                       wnd = TRUE,    # 10m wind speed (m/s)
+                       elv = TRUE)    # elevation (and convert to m from km)
