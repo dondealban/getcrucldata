@@ -114,7 +114,6 @@ ggplot(data = dfRD0, aes(x = month, y = rd0)) +
   labs(title = "Global Relative Humidity, 1960-1991",
        subtitle = "Excludes Antarctica")
 
-
 # Create Raster Stacks --------------------
 # The get_CRU_stack() function automates the download process and creates a raster stack
 # object of the CRU CL v. 2.0 climatology elements.
@@ -130,3 +129,30 @@ CRU_stack <- get_CRU_stack(pre = TRUE,
                            frs = TRUE,
                            wnd = TRUE,
                            elv = TRUE)
+
+# Write Raster Stack Objects --------------
+writeRaster(CRU_stack$frs,
+            filename = "frs.tif",
+            bylayer = TRUE,
+            format = "GTiff"
+            )
+writeRaster(CRU_stack$tmp,
+            filename = "tmp.tif",
+            bylayer = TRUE,
+            format = "GTiff"
+            )
+writeRaster(CRU_stack$wnd,
+            filename = "wnd.tif",
+            bylayer = TRUE,
+            format = "GTiff"
+            )
+writeRaster(CRU_stack$sun,
+            filename = "sun.tif",
+            bylayer = TRUE,
+            format = "GTiff"
+            )
+writeRaster(CRU_stack$rd0,
+            filename = "rd0.tif",
+            bylayer = TRUE,
+            format = "GTiff"
+            )
