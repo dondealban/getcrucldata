@@ -39,5 +39,44 @@ dfFRS <- get_CRU_df(frs = TRUE)
 dfWND <- get_CRU_df(wnd = TRUE)
 dfRD0 <- get_CRU_df(rd0 = TRUE)
 
+# Plot Monthly Maps of Climate Elements ---
 
+# Temperature
+ggplot(data = dfTMP, aes(x = lon, y = lat)) +
+  geom_raster(aes(fill = tmp)) +
+  scale_fill_viridis(option = "inferno") +
+  coord_quickmap() +
+  ggtitle("Global Mean Monthly Temperatures 1961-1990") +
+  facet_wrap(~ month, nrow = 4)
 
+# Sunshine Duration
+ggplot(data = dfSUN, aes(x = lon, y = lat)) +
+  geom_raster(aes(fill = sun)) +
+  scale_fill_viridis(option = "inferno") +
+  coord_quickmap() +
+  ggtitle("Global Percentage of Maximum Possible Sunshine 1961-1990") +
+  facet_wrap(~ month, nrow = 4)
+
+# Ground Frost Frequency
+ggplot(data = dfFRS, aes(x = lon, y = lat)) +
+  geom_raster(aes(fill = frs)) +
+  scale_fill_viridis(option = "plasma") +
+  coord_quickmap() +
+  ggtitle("Global Monthly Ground Frost Frequency 1961-1990") +
+  facet_wrap(~ month, nrow = 4)
+
+# Wind Speed
+ggplot(data = dfWND, aes(x = lon, y = lat)) +
+  geom_raster(aes(fill = wnd)) +
+  scale_fill_viridis(option = "viridis") +
+  coord_quickmap() +
+  ggtitle("Global Monthly 10m Wind Speed 1961-1990") +
+  facet_wrap(~ month, nrow = 4)
+
+# Relative Humidity
+ggplot(data = dfRD0, aes(x = lon, y = lat)) +
+  geom_raster(aes(fill = rd0)) +
+  scale_fill_viridis(option = "cividis") +
+  coord_quickmap() +
+  ggtitle("Global Monthly Relative Humidity 1961-1990") +
+  facet_wrap(~ month, nrow = 4)
