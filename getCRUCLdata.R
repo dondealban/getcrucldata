@@ -12,8 +12,9 @@ setwd("/Users/dondealban/Dropbox/Research/getcrucldata/")
 
 # Load Libraries --------------------------
 library(getCRUCLdata)
-library(raster)
 library(ggplot2)
+library(raster)
+library(viridis)
 
 # Read Input Data -------------------------
 # The get_CRU_df() function automates the download process and creates tidy dataframes of
@@ -30,3 +31,5 @@ CRU_data <- get_CRU_df(pre = TRUE,    # precipitation (mm/month)
                        frs = TRUE,    # ground-frost records (number of days with ground-frost per month)
                        wnd = TRUE,    # 10m wind speed (m/s)
                        elv = TRUE)    # elevation (and convert to m from km)
+
+
