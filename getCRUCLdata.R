@@ -32,4 +32,12 @@ CRU_data <- get_CRU_df(pre = TRUE,    # precipitation (mm/month)
                        wnd = TRUE,    # 10m wind speed (m/s)
                        elv = TRUE)    # elevation (and convert to m from km)
 
+# Extract Specific Climate Elements -------
+dfTMP <- get_CRU_df(tmp = TRUE)
+dfSUN <- get_CRU_df(sun = TRUE)
+dfFRS <- get_CRU_df(frs = TRUE)
+dfWND <- get_CRU_df(wnd = TRUE)
+dfRD0 <- get_CRU_df(rd0 = TRUE)
+
+
 
