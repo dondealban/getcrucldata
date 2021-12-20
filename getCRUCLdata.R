@@ -157,3 +157,8 @@ writeRaster(CRU_stack$rd0,
             bylayer = TRUE,
             format = "GTiff"
             )
+writeRaster(CRU_stack$elv,
+            filename = "elv.tif",
+            bylayer = TRUE,
+            format = "GTiff"
+            )
